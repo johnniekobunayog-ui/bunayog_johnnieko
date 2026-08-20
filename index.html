@@ -3,70 +3,1233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> John Nieko Bunayog</title>
+     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/> 
+    <title>GET TO'ˢ  THRIFT CO.</title>
+</head>
 <style>
-    body{
-        font-family: Arial, Helvetica, sans-serif;
-        max-width: 700px;
-        margin: 0 auto;
-        padding: 40px 20px;
-        line-height: 1.6;
-        color: #3333;
-      background-color: #fafafa; }
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+  }
+   
+  html, body{
+    background-color:white;
+    background-repeat: no-repeat;
+    scroll-behavior: smooth;
+  }
+  .top-banner {
+    background-color: black;
+    height: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.banner-track {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transform: translateX(-50%);
+}
+
+.banner-text {
+    color: white;
+    font-size: 15.2px;
+    font-weight: 700;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    padding: 0 40px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
       
 
-    header{
-        border-bottom: 3px solid #2e5c8a;
-        padding-bottom: 15px;
-        margin-top: 30px;
-
-     }
-h1{
-    color: #1a3A5c;
-    margin-bottom: 5px;
-}
-.subtitle{
-    color: #7777;
-    font-size: 16px;
-}
-ul{
-    padding-left: 20px;
-}
-li{
-    margin-bottom: 10px;
-}
-a{
-    color: #2e5c8a;
+.background-slide {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
 
-footer{
-    margin-top: 40px;
-    border-top: 1px solid #dddd;
-    padding-top: 15px;
+.background-slide img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.diamond-toggle {
+  position: fixed;
+  top: 60px;
+  left: 40px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1100;
+  transition: left 0.4s ease;
+}
+
+.diamond {
+  width: 45px;
+  height: 45px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(0deg);
+  transition: transform 0.4s ease, background-color 0.4s ease;
+}
+
+.diamond i {
+  color: black;
+  font-size: 25px;
+  transform: rotate(0deg);
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.diamond-toggle.active .diamond {
+  transform: rotate(45deg);
+  background-color: white;
+}
+
+.diamond-toggle.active .diamond i {
+  transform: rotate(-45deg);
+  color: black;
+}
+
+.close-icon {
+  display: none;
+}
+
+.slide {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  padding: 100px 40px 40px;
+  box-sizing: border-box;
+  background-color: black;
+  transform: translateX(-100%);
+  transition: transform 0.45s cubic-bezier(0.77, 0, 0.18, 1);
+  z-index: 1000;
+  box-shadow: 8px 0 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.slide.active {
+  transform: translateX(0);
+}
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.search-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 20px 0 45px;
+  box-sizing: border-box;
+  border: 1.5px solid #ddd;
+  border-radius: 30px;
+  font-size: 1rem;
+  outline: none;
+  color:white;
+  background-color: white;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: black;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.search-input::placeholder {
+  color: #888;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #888;
+  pointer-events: none;
+}
+
+.slide ul {
+  list-style: none;
+  text-align: center;
+  
+}
+
+.slide ul li {
+  margin-bottom: 20px;
+}
+
+.slide ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.25s ease;
+}
+
+.slide ul li a:hover {
+  color: #777;
+}
+
+.media-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 5rem;
+}
+
+.facebook,
+.tiktok,
+.insta {
+  font-size: 20px;
+  color: white;
+  transition: transform 0.25s ease;
+}
+
+.facebook:hover,
+.tiktok:hover,
+.insta:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+  .diamond-toggle {
+    top: 18px;
+    left: 18px;
+  }
+
+  .slide {
+    width: 100%;
+    padding: 90px 30px 30px;
+  }
+}
+.sname{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 1.5px 1.5px 3.5px rgba(0,0,0,0.7);
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+}
+
+.about-me {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.about-me img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.about-me h4 {
+  margin: 0 0 5px;
+  color: #fff;
+  font-size: 15px;
+}
+
+.about-me p {
+  margin: 0;
+  color: #aaa;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .about-me {
+    justify-content: center;
+  }
+}
+
+.our-products {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.our-products h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+}
+
+.products {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.product-card img {
+    display: block;
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.view-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 25px;
     font-size: 14px;
-    color: #9999;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
-</style>    
-    <body>
-        <header>
-            <h1>Welcome to My First Website</h1>
-            <p class="subtitle">John Nieko Bunayog &middot; BTVTED-Compro &middot; Web Development</p>
-        </header>
-        <h2>
-            About this Page
-        </h2>
+.view-btn:hover {   
+    background-color: white;
+    color: black;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.product-card {
+    position: relative;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s ease;
+}
+
+.product-card:hover .overlay {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.price {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    background: white;
+    color: #222;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.footer {
+  background: #000;
+  color: #fff;
+  padding: 80px 20px 50px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  max-width: 1170px;
+  margin: auto;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.footer-logo,
+.footer-subscribe {
+  flex: 1;
+}
+
+.footer-logo h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.footer-logo p,
+.footer-links a {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.footer-logo p {
+  margin-top: 5px;
+}
+
+.footer-links {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.footer-links h4 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 6px;
+}
+
+.footer-links a {
+  position: relative;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.footer-links a:hover,
+.social-icons a:hover {
+  color: #fff;
+}
+
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: .3s;
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+.footer-subscribe {
+  text-align: right;
+  align-self: flex-end;
+}
+
+.footer-subscribe form {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-subscribe input {
+  width: 200px;
+  padding: 10px 15px;
+  border: 0;
+  outline: 0;
+  border-radius: 4px 0 0 4px;
+}
+
+.footer-subscribe button {
+  padding: 10px 20px;
+  border: 0;
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  transition: .3s;
+}
+
+.footer-subscribe button:hover {
+  background: #444;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #333;
+  margin: 20px 0;
+}
+
+.footer-bottom {
+  text-align: center;
+}
+
+.social-icons a {
+  display: inline-block;
+  color: #aaa;
+  margin: 0 5px;
+  font-size: 16px;
+  transition: .3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+.footer-bottom p {
+  color: #777;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* Responsive styles for any devices */
+@media (max-width: 1100px) {
+    .products {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .product-card img {
+        height: 19rem;
+    }
+
+    .footer-container {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-banner {
+        height: 2.5rem;
+    }
+
+    .banner-text {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        padding: 0 25px;
+    }
+
+    .background-slide {
+        height: 75vh;
+        min-height: 450px;
+    }
+
+    .background-slide img {
+        object-position: center;
+    }
+
+    .sname {
+        width: 90%;
+        text-align: center;
+        font-size: clamp(1.8rem, 6vw, 3rem);
+        line-height: 1.2;
+    }
+
+    .our-products {
+        padding: 35px 15px;
+    }
+
+    .our-products h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        padding: 20px 0;
+    }
+
+    .product-card img {
+        height: 18rem;
+    }
+
+    .price {
+        top: 8px;
+        right: 8px;
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+
+    .view-btn {
+        padding: 9px 16px;
+        font-size: 12px;
+    }
+
+    .footer {
+        padding: 60px 20px 40px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-logo,
+    .footer-links,
+    .footer-subscribe {
+        width: 100%;
+        flex: none;
+    }
+
+    .footer-links {
+        margin: 30px 0;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .footer-subscribe {
+        text-align: center;
+        align-self: center;
+    }
+
+    .footer-subscribe form {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .footer-subscribe input {
+        width: min(200px, 60%);
+    }
+
+    .about-me {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-banner {
+        height: 2.3rem;
+    }
+
+    .banner-text {
+        font-size: 10px;
+        letter-spacing: 1px;
+        padding: 0 15px;
+    }
+
+    .background-slide {
+        height: 65vh;
+        min-height: 400px;
+    }
+
+    .sname {
+        width: 90%;
+        font-size: clamp(1.5rem, 8vw, 2.2rem);
+        line-height: 1.15;
+        letter-spacing: 0.5px;
+    }
+
+    .our-products {
+        padding: 30px 12px;
+    }
+
+    .our-products h2 {
+        font-size: 1.3rem;
+        letter-spacing: 1.5px;
+        margin-bottom: 10px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .product-card {
+        width: 100%;
+    }
+
+    .product-card img {
+        width: 100%;
+        height: auto;
+        min-height: 350px;
+        max-height: 500px;
+        object-fit: cover;
+    }
+
+    .price {
+        top: 10px;
+        right: 10px;
+        font-size: 13px;
+        padding: 6px 9px;
+    }
+
+    .view-btn {
+        padding: 9px 17px;
+        font-size: 12px;
+    }
+
+    .footer {
+        padding: 50px 15px 35px;
+    }
+
+    .footer-logo h2 {
+        font-size: 20px;
+    }
+
+    .footer-logo p {
+        font-size: 13px;
+    }
+
+    .footer-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px 15px;
+        margin: 30px 0;
+        width: 100%;
+    }
+
+    .footer-links h4 {
+        font-size: 13px;
+    }
+
+    .footer-links a {
+        font-size: 13px;
+    }
+
+    .footer-subscribe form {
+        display: flex;
+        width: 100%;
+    }
+
+    .footer-subscribe input {
+        width: 65%;
+        min-width: 0;
+        font-size: 13px;
+    }
+
+    .footer-subscribe button {
+        width: 35%;
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+
+    .about-me {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-align: left;
+    }
+
+    .about-me img {
+        width: 60px;
+        height: 60px;
+        flex-shrink: 0;
+    }
+
+    .about-me h4 {
+        font-size: 14px;
+    }
+
+    .about-me p {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    .footer-bottom {
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 360px) {
+    .banner-text {
+        font-size: 9px;
+        letter-spacing: 0.7px;
+    }
+
+    .background-slide {
+        min-height: 350px;
+    }
+
+    .sname {
+        font-size: 1.4rem;
+    }
+
+    .our-products {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .product-card img {
+        min-height: 300px;
+    }
+
+    .footer-links {
+        gap: 20px 10px;
+    }
+
+    .about-me img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .about-me p {
+        font-size: 10px;
+    }
+}
+
+</style>
+<body>
+
+  <section id="ge-banner" class="top-banner">
+        <div class="banner-track" id="bannerTrack">
+          <div class="banner-text">Made With Good Intension</div>
+        </div>
+      </section>
+      <style>
+
+</style>
+
+<div class="diamond-toggle" id="menu-btn">
+  <div class="diamond">
+    <i class="ri-menu-line"></i>
+  </div>
+</div>
+
+<nav class="slide" id="sidebar">
+  <div class="close-icon" id="close-btn">
+    <i class="ri-add-line"></i>
+  </div>
+
+  <div class="search-wrapper">
+    <span class="search-icon"><i class="ri-search-line"></i></span>
+    <input type="text" class="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about-us.html">About Us</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="order.html">How To Order</a></li>
+    <li><a href="store.html">Stores</a></li>
+    <li><a href="faq.html">FAQs</a></li>
+  </ul>
+
+  <div class="media-container">
+    <a href="#" class="facebook">
+      <i class="ri-facebook-circle-fill"></i>
+    </a>
+
+    <a href="#" class="tiktok">
+      <i class="ri-tiktok-fill"></i>
+    </a>
+
+    <a href="#" class="insta">
+      <i class="ri-instagram-fill"></i>
+    </a>
+  </div>
+</nav>
+      <section id="front" class="front-section">
+<div class="background-slide">
+        <img id="slide-1" src="gttsc.avif" alt="Slide Image">
+        <div class="sname"> 
+        GET TO'ˢ THRIFT CO.
+      </div>
+    </div>
+      </section>
+
+      <section id="our-products" class="our-products">
+
+    <h2>Our Products</h2>
+
+    <div class="product-grid">
+
+      <div class="products">
+
+   <a href="product-details.html" class="product-card">
+    <div class="price">Price: ₱280.00</div>
+
+    <div class="image-box">
+        <img src="75565784-0fd9-433a-8d8f-30fe804d04ea.jpg" alt="Product 1">
+
+        <div class="overlay">
+            <span class="view-btn">QUICK VIEW</span>
+        </div>
+    </div>
+</a>
+
+<a href="product-details.html" class="product-card">
+    <div class="price">Price: ₱500.00</div>
+
+    <div class="image-box">
+        <img src="de7a8094-2582-4cf0-9efa-63d3b5f485ff.jpg" alt="Product 1">
+
+        <div class="overlay">
+            <span class="view-btn">QUICK VIEW</span>
+        </div>
+    </div>
+</a>
+
+<a href="product-details.html" class="product-card">
+    <div class="price">Price: ₱480.00</div>
+
+    <div class="image-box">
+        <img src="4ac4e8e2-0fec-487c-8b52-d61f5cb097d3.jpg" alt="Product 1">
+
+        <div class="overlay">
+            <span class="view-btn">QUICK VIEW</span>
+        </div>
+    </div>
+</a>
+
+<a href="product-details.html" class="product-card">
+    <div class="price">Price: ₱340.00</div>
+
+    <div class="image-box">
+        <img src="6ab90f42-7081-45fb-9098-6fc1c29e3906.jpg" alt="Product 1">
+
+        <div class="overlay">
+            <span class="view-btn">QUICK VIEW</span>
+        </div>
+    </div>
+</a>
+<a href="product-details.html" class="product-card">
+    <div class="price">Price: ₱580.00</div>
+
+    <div class="image-box">
+        <img src="68f5c552-577f-4c05-97c2-cc934d3313a8.jpg" alt="Product 1">
+
+        <div class="overlay">
+            <span class="view-btn">QUICK VIEW</span>
+        </div>
+    </div>
+</a>
+
+<a href="product-details.html" class="product-card">
+    <div class="price">Price: ₱890.00</div>
+
+    <div class="image-box">
+        <img src="1351889c-caf7-4c74-9748-a7121fff843d.jpg" alt="Product 1">
+
+        <div class="overlay">
+            <span class="view-btn">QUICK VIEW</span>
+        </div>
+    </div>
+</a>
+
+<a href="product-details.html" class="product-card">
+    <div class="price">Price: ₱1,000.00</div>
+
+    <div class="image-box">
+        <img src="c8243445-705c-4fe2-8e63-0e89342cfdad.jpg" alt="Product 1">
+
+        <div class="overlay">
+            <span class="view-btn">QUICK VIEW</span>
+        </div>
+    </div>
+</a>
+<a href="product-details.html" class="product-card">
+    <div class="price">Price: ₱1,200.00</div>
+
+    <div class="image-box">
+        <img src="7df5f099-9646-4ae1-8f26-1c83082fe874.jpg" alt="Product 1">
+
+        <div class="overlay">
+            <span class="view-btn">QUICK VIEW</span>
+        </div>
+    </div>
+</a>
+
+<a href="product-details.html" class="product-card">
+    <div class="price">Price: ₱600.00</div>
+
+    <div class="image-box">
+        <img src="54068f52-fbe9-4bd8-902d-d0f5279cef86.jpg" alt="Product 1">
+
+        <div class="overlay">
+            <span class="view-btn">QUICK VIEW</span>
+        </div>
+    </div>
+</a>
+<a href="product-details.html" class="product-card">
+    <div class="price">Price: ₱200.00</div>
+
+    <div class="image-box">
+        <img src="608a2cf0-5f6a-44d4-b6bf-c5466cb3edd1.jpg" alt="Product 1">
+
+        <div class="overlay">
+            <span class="view-btn">QUICK VIEW</span>
+        </div>
+    </div>
+</a>
+<a href="product-details.html" class="product-card">
+    <div class="price">Price: ₱500.00</div>
+
+    <div class="image-box">
+        <img src="139a681c-0039-4c3e-9eca-21eaaaf1720b.jpg" alt="Product 1">
+
+        <div class="overlay">
+            <span class="view-btn">QUICK VIEW</span>
+        </div>
+    </div>
+</a>
+
+<a href="product-details.html" class="product-card">
+    <div class="price">Price: ₱400.00</div>
+
+    <div class="image-box">
+        <img src="0c342bb7-5bbb-4ce4-849b-6fc50f10e9d9.jpg" alt="Product 1">
+
+        <div class="overlay">
+            <span class="view-btn">QUICK VIEW</span>
+        </div>
+    </div>
+</a>
+
+    
+    </div>
+
+</section>
+          
+        </div>
+      </section>
+
+    <footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-top">
+
+      <div class="footer-logo">
+        <h2>GET TO'ˢ THRIFT CO.</h2>
+        <p>Made with good intention</p>
+      </div>
+
+      <div class="footer-links">
+
+        <div>
+          <h4>Home</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">How To Order</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Location</h4>
+          <ul>
+            <li><a href="#">Stores</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>About Us</h4>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer-subscribe">
+        <form action="#">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+
+    </div>
+
+    <hr>
+    <div class="about-me">
+      <img src="nicko.jpg" alt="John Nieko Bunayog">
+
+      <div>
+        <h4>About Me</h4>
         <p>
-            This is my home page for our Web Development course. Every activity I Complete Will be listed below.
+         Hi, I'm John Nieko Bunayog, the Webpage Developer for GET TO'ˢ THRIFT CO.
+          <br>
+          from BTVTED-Computer Programming.
         </p>
-    <section>
-        <h2> My Activities</h2>
-        <ul>
-        <li> <a href="">Activity 1 - My First Webpage</a></li>
-        </ul>
-    </section>
-    <footer>
-        <p>Created by John Nieko Bunayog &middot; @2026</p>
-    </footer>
-    </body>
-</head> 
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="social-icons">
+        <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+        <a href="#"><i class="ri-tiktok-fill"></i></a>
+        <a href="#"><i class="ri-instagram-fill"></i></a>
+      </div>
+
+      <p>© Copyright 2026. All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>
+      
+</body>
 </html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const track = document.getElementById("bannerTrack");
+  const text = "Made With Good Intension";
+
+  track.innerHTML = "";
+
+  for (let i = 0; i < 12; i++) {
+    const item = document.createElement("div");
+    item.className = "banner-text";
+    item.textContent = text;
+    track.appendChild(item);
+  }
+
+  let x = -track.scrollWidth;
+  let last = performance.now();
+  const speed = 80;
+
+  function move(now) {
+    const delta = (now - last) / 1000;
+    last = now;
+
+    x += speed * delta;
+
+    if (x >= 0) {
+      x = -track.scrollWidth;
+    }
+
+    track.style.transform = `translate3d(${x}px, 0, 0)`;
+    requestAnimationFrame(move);
+  }
+
+  requestAnimationFrame(move);
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menuBtn = document.getElementById("menu-btn");
+  const sidebar = document.getElementById("sidebar");
+  const icon = menuBtn.querySelector("i");
+  const closeBtn = document.getElementById("close-btn");
+  const diamond = menuBtn.querySelector(".diamond");
+
+  diamond.appendChild(closeBtn);
+
+  closeBtn.style.position = "absolute";
+  closeBtn.style.top = "47%";
+  closeBtn.style.left = "50%";
+  closeBtn.style.transform = "translate(-50%, -50%)";
+  closeBtn.style.fontSize = "32px";
+  closeBtn.style.cursor = "pointer";
+  closeBtn.style.display = "none";
+
+  menuBtn.style.transition = "left 0.3s ease, transform 0.3s ease";
+
+  const desktopClosed = "25px";
+  const sidebarWidth = 290;
+  const gap = 20;
+
+  function isMobile() {
+    return window.innerWidth <= 768;
+  }
+
+  function updateDiamondPosition(isActive) {
+    if (isMobile()) {
+      if (isActive) {
+        menuBtn.style.left = "50%";
+        menuBtn.style.transform = "translateX(-50%)";
+      } else {
+        menuBtn.style.left = "25px";
+        menuBtn.style.transform = "translateX(0)";
+      }
+    } else {
+      menuBtn.style.transform = "translateX(0)";
+
+      if (isActive) {
+        menuBtn.style.left = (sidebarWidth + gap) + "px";
+      } else {
+        menuBtn.style.left = desktopClosed;
+      }
+    }
+  }
+
+  updateDiamondPosition(false);
+
+  menuBtn.addEventListener("click", function () {
+    const isActive = menuBtn.classList.toggle("active");
+
+    sidebar.classList.toggle("active", isActive);
+
+    if (isActive) {
+      icon.style.display = "none";
+      closeBtn.style.display = "block";
+    } else {
+      icon.style.display = "block";
+      closeBtn.style.display = "none";
+    }
+
+    updateDiamondPosition(isActive);
+  });
+
+  window.addEventListener("resize", function () {
+    updateDiamondPosition(menuBtn.classList.contains("active"));
+  });
+});
+</script>
